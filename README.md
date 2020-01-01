@@ -1,7 +1,7 @@
 # pointlake
 Position handler for Garry’s Mod
 
-This addon allows you to create and save groups of position and use it in your code.
+This addon gives you an ability to create and save position groups and then use it in code.
 
 How to use:
 1. Choose a PointLake toolgun in spawnmenu.
