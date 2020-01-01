@@ -263,7 +263,7 @@ local lc_clicked = false
 local rc_clicked = false
 local r_clicked = false
 	function TOOL:LeftClick(trace)
-		if !PointLake.IsPlayerHaveAccess(pl) then return false end
+		if !PointLake.HasPlayerAccess(pl) then return false end
 		if lc_clicked then return false end
 		if curpos:GetString() ~= "" or curgroup:GetString() == "" then return false end
 		lc_clicked = true
@@ -273,7 +273,7 @@ local r_clicked = false
 	end
 
 	function TOOL:RightClick(trace)
-		if !PointLake.IsPlayerHaveAccess(pl) then return false end
+		if !PointLake.HasPlayerAccess(pl) then return false end
 		if rc_clicked then return false end
 		if curpos:GetString() ~= "" or curgroup:GetString() == "" then return false end
 		rc_clicked = true
@@ -287,7 +287,7 @@ local r_clicked = false
 	end
 
 	function TOOL:Reload(trace)
-		if !PointLake.IsPlayerHaveAccess(pl) then return false end
+		if !PointLake.HasPlayerAccess(pl) then return false end
 		if r_clicked then return false end
 		if curpos:GetString() == "" or curgroup:GetString() == "" then return false end
 		r_clicked = true
@@ -381,7 +381,7 @@ else
 	local function getaccesibleplayers()
 		local tb = {}
 		for _, v in pairs(player.GetAll()) do
-			if PointLake.IsPlayerHaveAccess(v) then
+			if PointLake.HasPlayerAccess(v) then
 				table.insert(tb, v)
 			end
 		end
@@ -455,7 +455,7 @@ else
 	end
 
 	net.Receive("PointLake_Data", function(len, ply)
-		if !PointLake.IsPlayerHaveAccess(ply) then return end
+		if !PointLake.HasPlayerAccess(ply) then return end
 		local type = net.ReadUInt(2)
 		if type == 0 then
 			if net.ReadBit() == 0 then
