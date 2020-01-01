@@ -40,7 +40,7 @@ hook.Add("Think", "PointLake - Autosave", function()
     end
 end)
 
-hook.Add("Shutdown","PointLake - Shutdown save",function()
+hook.Add("Shutdown", "PointLake - Shutdown save", function()
     local data = util.TableToJSON(PointLake.Positions)
     if data ~= rawdata then
         savepositions(data)
