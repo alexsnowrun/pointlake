@@ -13,7 +13,7 @@ TOOL.Information = {
 }
 
 function string:IsBlank()
-   return self == "" or tostring(self):find("^%s+$")
+   return tostring(self) == "" or tostring(self):find("^%s+$")
 end
 
 if CLIENT then
