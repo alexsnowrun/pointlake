@@ -10,4 +10,9 @@ How to use:
 
 If you want to remove a position, you can press R or RMB on the node of position.
 
+API:
+1. PointLake.GetGroupPositions(<string> Groupname) -- Gets a group of positions.
+2. PointLake.GetRandomPosition(<string> Groupname) -- Gets a random position from group.
+3. PointLake.GetPosition(<string> Groupname,<string/number> PositionName) -- Gets a certain position.
+
 !!!DOES NOT WORK IN SINGLEPLAYER!!!
