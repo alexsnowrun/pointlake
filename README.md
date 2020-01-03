@@ -1,6 +1,8 @@
 # pointlake
 Position handler for Garry’s Mod
 
+![Logo](https://i.imgur.com/BcTuvO0.png)
+
 This addon gives you an ability to create and save position groups. You can use them in your code by the time.
 
 
