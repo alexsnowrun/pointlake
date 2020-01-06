@@ -40,7 +40,7 @@ if CLIENT then
 
 	hook.Add("PostDrawOpaqueRenderables", "PointLake - Drawing", function()
 		pl = LocalPlayer()
-		if pl:GetTool() == nil or pl:GetActiveWeapon() == NULL or pl:GetActiveWeapon():GetClass() ~= "gmod_tool" or pl:GetTool().Mode ~= "pl_poseditor" then return end
+		if IsValid(pl:GetActiveWeapon()) and pl:GetTool() == nil or pl:GetActiveWeapon() == NULL or pl:GetActiveWeapon():GetClass() ~= "gmod_tool" or pl:GetTool().Mode ~= "pl_poseditor" then return end
 		if !curgroup then curgroup = GetConVar("pl_poseditor_curgroup") end
 		if !curpos then curpos = GetConVar("pl_poseditor_curpos") end
 		if positions[curgroup:GetString()] then
